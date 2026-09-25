@@ -1,0 +1,11 @@
+# raw PhysioNet records (large; download with scripts/download_data.py)
+data/raw/
+data/cache/
+data/results/
+data/figures/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/

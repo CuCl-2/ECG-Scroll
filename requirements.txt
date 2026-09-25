@@ -1,0 +1,19 @@
+# ECG-Scroll: construction + streaming environment + evaluation
+# -------------------------------------------------------------
+# Construction, verifiers, the streaming environment, and the Rule Agent
+# reference need NO GPU and only the core deps below.
+
+# ---- core (no GPU) ----
+wfdb>=4.1               # PhysioNet .hea/.dat/.atr I/O + XQRS detector
+numpy>=1.24
+scipy>=1.10             # signal processing in the tools + Rule Agent
+matplotlib>=3.7         # statistics + behavior figures
+
+# ---- LLM agents (run_llm_skim.py / run_llm_fc.py) ----
+# Query any OpenAI-compatible endpoint (a local vLLM server, or a hosted API).
+openai>=1.0
+
+# ---- serving models locally (optional) ----
+# A tool-call-parsing OpenAI-compatible server, e.g.:
+#   vllm>=0.8.5   (launch with --enable-auto-tool-choice --tool-call-parser hermes)
+# Pin torch/vllm to match your CUDA build; not pinned here to stay install-anywhere.
